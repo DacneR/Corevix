@@ -1,14 +1,16 @@
 from fastapi import FastAPI
 
+from app.api.routes import router
+
+from app.core.config import settings
+from app.core.logger import logger
+
 app = FastAPI(
-    title="Corevix API",
+    title=settings.PROJECT_NAME,
     description="Plataforma de administración y monitoreo de redes locales.",
-    version="1.0.0"
+    version=settings.VERSION
 )
 
-@app.get("/")
-def root():
-    return {
-        "project": "Corevix",
-        "status": "running"
-    }
+app.include_router(router)
+
+logger.info("Corevix iniciado correctamente.")
