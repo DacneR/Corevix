@@ -86,7 +86,7 @@ export default function App() {
       const res = await fetch(`${API_BASE}/devices/scan`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ip: '192.168.1.0' }),
+        body: JSON.stringify({}),
       });
       const data = await res.json();
       if (Array.isArray(data.devices)) {

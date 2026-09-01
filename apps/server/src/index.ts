@@ -5,7 +5,7 @@ import swagger from '@fastify/swagger';
 import swaggerUi from '@fastify/swagger-ui';
 import { PrismaClient } from '@prisma/client';
 import { z } from 'zod';
-import { WebSocketServer } from 'ws';
+import { WebSocketServer, type WebSocket as ServerWebSocket } from 'ws';
 import { scanLocalNetwork } from './network.js';
 
 const prisma = new PrismaClient();
@@ -132,7 +132,7 @@ const start = async () => {
       path: '/api/ws',
     });
 
-    wsServer.on('connection', (socket: WebSocket) => {
+    wsServer.on('connection', (socket: ServerWebSocket) => {
       socket.send(JSON.stringify({
         type: 'status',
         message: 'Connected to Corevix websocket',

@@ -159,3 +159,6 @@ Actualmente Corevix se encuentra en la construcción de su núcleo de monitoreo 
 # Licencia
 
 Proyecto desarrollado con fines educativos, investigación y administración de redes locales.
+
+# Prompt 
+
