@@ -1,0 +1,14 @@
+{
+  "name": "corevix-migration",
+  "private": true,
+  "version": "2.0.0",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace @corevix/server",
+    "dev:web": "npm run dev --workspace @corevix/web",
+    "build": "npm run build --workspace @corevix/server && npm run build --workspace @corevix/web",
+    "start": "npm run start --workspace @corevix/server"
+  }
+}
